@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_designs/screens/basic_design.dart';
+import 'package:flutter_designs/screens/home_screem.dart';
 import 'package:flutter_designs/screens/scroll_design.dart';
 
 void main() => runApp(MyApp());
@@ -7,13 +9,16 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark(),
       title: 'Material App',
-      initialRoute: 'scroll_screen',
+      initialRoute: 'home_screen',
       routes: {
         'basic_design': (_) => BasicDesignScreen(),
         'scroll_screen': (_) => ScrollScreen(),
+        'home_screen': (_) => HomeScreen(),
       },
     );
   }
